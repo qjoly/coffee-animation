@@ -8,7 +8,6 @@ import (
 	"time"
 )
 
-// Logger middleware to log the IP address of each request, including X-Real-IP if present
 func Logger(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		realIP := r.Header.Get("X-Real-IP")
